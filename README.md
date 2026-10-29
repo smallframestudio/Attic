@@ -62,7 +62,7 @@ Removing an archive in the app deletes its folder here. Deleting this whole fold
 
 ## Sharing the .dmg with others
 
-- The app is signed only for local use, so on another Mac the first launch shows an "unidentified developer" warning. They can right-click Attic → Open → Open once, or allow it in System Settings → Privacy & Security. Removing that warning entirely requires an Apple Developer ID ($99/year) and Apple's notarization.
+- The app is signed only for local use, so on another Mac the first launch shows an "unidentified developer" warning. They can right-click Attic → Open → Open once, or allow it in System Settings → Privacy & Security. 
 - Each Mac also needs `brew install libpst` for readpst. The app explains this the first time someone imports a .pst.
 
 ## Limitations
