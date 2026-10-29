@@ -1,5 +1,5 @@
 import AppKit
-import PSTCore
+import AtticCore
 import UniformTypeIdentifiers
 
 /// Opening, saving and revealing attachments and message files.

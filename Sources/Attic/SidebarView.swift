@@ -1,4 +1,4 @@
-import PSTCore
+import AtticCore
 import SwiftUI
 
 struct SidebarView: View {

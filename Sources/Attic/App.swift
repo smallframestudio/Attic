@@ -1,9 +1,9 @@
 import AppKit
-import PSTCore
+import AtticCore
 import SwiftUI
 
 @main
-struct PSTArchiveReaderApp: App {
+struct AtticApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     // A plain constant rather than @State: the Command Line Tools lack the plugin that
     // @State needs in newer SDKs, and the model lives as long as the app anyway.

@@ -2,22 +2,22 @@
 import PackageDescription
 
 let package = Package(
-    name: "PSTArchiveReader",
+    name: "Attic",
     platforms: [.macOS(.v14)],
     products: [
-        .executable(name: "PSTArchiveReader", targets: ["PSTArchiveReader"]),
+        .executable(name: "Attic", targets: ["Attic"]),
         .executable(name: "attic-pdftext", targets: ["AtticPDFText"]),
     ],
     targets: [
         // Everything that isn't UI: MIME parsing, the SQLite full-text index, and the importer.
         .target(
-            name: "PSTCore",
+            name: "AtticCore",
             linkerSettings: [.linkedLibrary("sqlite3")]
         ),
         // The SwiftUI app.
         .executableTarget(
-            name: "PSTArchiveReader",
-            dependencies: ["PSTCore"]
+            name: "Attic",
+            dependencies: ["AtticCore"]
         ),
         // Reads PDF text in its own process, so a PDF that hangs Apple's parser can be killed.
         .executableTarget(
@@ -25,8 +25,8 @@ let package = Package(
             path: "Sources/AtticPDFText"
         ),
         .testTarget(
-            name: "PSTCoreTests",
-            dependencies: ["PSTCore"]
+            name: "AtticCoreTests",
+            dependencies: ["AtticCore"]
         ),
     ]
 )

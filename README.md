@@ -23,14 +23,14 @@ A Mac app for reading and searching old Outlook mail archives (.pst and .ost fil
 ## Build and run
 
 ```
-cd PSTArchiveReader
+cd attic
 ./build-app.sh
 open "build/Attic.app"
 ```
 
 Drag the app into `/Applications` if you want to keep it.
 
-To make an installer instead, run `./make-dmg.sh`. It builds the app and creates `build/Attic-1.1.dmg`; open that and drag Attic onto Applications. The .dmg works on other Macs too (see the note on sharing below). Alternatively, open `Package.swift` in Xcode, choose the **PSTArchiveReader** scheme and press Run.
+To make an installer instead, run `./make-dmg.sh`. It builds the app and creates `build/Attic-1.1.dmg`; open that and drag Attic onto Applications. The .dmg works on other Macs too (see the note on sharing below). Alternatively, open `Package.swift` in Xcode, choose the **Attic** scheme and press Run.
 
 Run the parser and search tests with `swift test` (needs full Xcode).
 
@@ -51,13 +51,13 @@ Removing an archive in the app deletes its folder here. Deleting this whole fold
 
 | File | Role |
 | --- | --- |
-| `Sources/PSTCore/ArchiveImporter.swift` | Runs `readpst -e` to unpack the PST into `.eml` files, then parses them in parallel and indexes them |
-| `Sources/PSTCore/MIMEParser.swift` | MIME parser: multipart, base64/quoted-printable, RFC 2047/2231 names, charsets, inline images |
-| `Sources/PSTCore/TextDecoding.swift` | Charset handling, HTML-to-text, date parsing |
-| `Sources/PSTCore/Library.swift` | SQLite store, FTS5 index and search |
-| `Sources/PSTCore/SearchQuery.swift` | Turns the search box text into an FTS5 query |
-| `Sources/PSTCore/SearchForm.swift` | The advanced-search form, converted to and from search-box text |
-| `Sources/PSTArchiveReader/` | SwiftUI interface |
+| `Sources/AtticCore/ArchiveImporter.swift` | Runs `readpst -e` to unpack the PST into `.eml` files, then parses them in parallel and indexes them |
+| `Sources/AtticCore/MIMEParser.swift` | MIME parser: multipart, base64/quoted-printable, RFC 2047/2231 names, charsets, inline images |
+| `Sources/AtticCore/TextDecoding.swift` | Charset handling, HTML-to-text, date parsing |
+| `Sources/AtticCore/Library.swift` | SQLite store, FTS5 index and search |
+| `Sources/AtticCore/SearchQuery.swift` | Turns the search box text into an FTS5 query |
+| `Sources/AtticCore/SearchForm.swift` | The advanced-search form, converted to and from search-box text |
+| `Sources/Attic/` | SwiftUI interface |
 | `Resources/` | App icon: `AppIcon.svg` (source), `AppIcon.icns` (used by the build); `make_icon.py` regenerates it |
 
 ## Sharing the .dmg with others

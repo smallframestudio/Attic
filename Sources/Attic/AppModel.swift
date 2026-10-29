@@ -1,6 +1,6 @@
 import AppKit
 import Observation
-import PSTCore
+import AtticCore
 import SwiftUI
 import UniformTypeIdentifiers
 

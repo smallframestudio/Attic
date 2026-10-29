@@ -8,11 +8,11 @@ APP="build/${APP_NAME}.app"
 
 echo "Building (release)..."
 swift build -c release
-BIN="$(swift build -c release --show-bin-path)/PSTArchiveReader"
+BIN="$(swift build -c release --show-bin-path)/Attic"
 
 rm -rf "${APP}"
 mkdir -p "${APP}/Contents/MacOS" "${APP}/Contents/Resources" "${APP}/Contents/Helpers"
-cp "${BIN}" "${APP}/Contents/MacOS/PSTArchiveReader"
+cp "${BIN}" "${APP}/Contents/MacOS/Attic"
 cp Resources/AppIcon.icns "${APP}/Contents/Resources/AppIcon.icns"
 # PDF text helper (reads PDFs in a separate process that can be killed if it hangs)
 BIN_DIR="$(dirname "${BIN}")"
@@ -27,7 +27,7 @@ cat > "${APP}/Contents/Info.plist" <<'PLIST'
     <key>CFBundleName</key><string>Attic</string>
     <key>CFBundleDisplayName</key><string>Attic</string>
     <key>CFBundleIdentifier</key><string>local.attic</string>
-    <key>CFBundleExecutable</key><string>PSTArchiveReader</string>
+    <key>CFBundleExecutable</key><string>Attic</string>
     <key>CFBundleIconFile</key><string>AppIcon</string>
     <key>CFBundlePackageType</key><string>APPL</string>
     <key>CFBundleShortVersionString</key><string>1.1</string>

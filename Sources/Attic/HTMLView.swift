@@ -1,5 +1,5 @@
 import AppKit
-import PSTCore
+import AtticCore
 import SwiftUI
 import WebKit
 

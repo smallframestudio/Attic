@@ -1,5 +1,5 @@
 import XCTest
-@testable import PSTCore
+@testable import AtticCore
 
 final class MIMEParserTests: XCTestCase {
 

@@ -1,4 +1,4 @@
-import PSTCore
+import AtticCore
 import SwiftUI
 
 /// The row above the message list: folder name, search box, sort menu.
