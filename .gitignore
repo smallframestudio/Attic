@@ -1,0 +1,9 @@
+.build/
+build/
+.swiftpm/
+*.xcodeproj
+.DS_Store
+
+# Local diagnostics and tool output (may contain mailbox paths)
+attic-*.txt
+Claude outputs/
